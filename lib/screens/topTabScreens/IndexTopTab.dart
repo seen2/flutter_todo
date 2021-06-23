@@ -14,7 +14,6 @@ class IndexTopTab extends StatelessWidget {
         child: Scaffold(
           body: Scaffold(
             appBar: AppBar(
-                backgroundColor: Colors.deepPurple,
                 toolbarHeight: 80,
                 bottom: TabBar(
                   tabs: [

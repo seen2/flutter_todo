@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:todo/screens/HomeScreen.dart';
+import 'package:todo/screens/PodcastDetailsScreen.dart';
+import 'package:todo/util/AppRoutes.dart';
 
 main(List<String> args) {
   runApp(MyApp());
@@ -11,7 +13,13 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: Material(child: HomeScreen()),
+      theme: ThemeData(primarySwatch: Colors.blueGrey),
+      debugShowCheckedModeBanner: false,
+      initialRoute: AppRoutes.homeRoute,
+      routes: {
+        AppRoutes.homeRoute: (context) => HomeScreen(),
+        AppRoutes.podcastDetailsRoute: (context) => PodcastDetailsScreen()
+      },
     );
   }
 }

@@ -37,49 +37,50 @@ class _HomeScreenState extends State<HomeScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return DefaultTabController(
-      length: 3,
-      child: Scaffold(
-          appBar: AppBar(
-            backgroundColor: Colors.deepPurple,
-            title: Text("Navigation"),
-          ),
-          drawer: Drawer(
-            child: Container(
-              color: Colors.deepPurple,
+    return Material(
+      child: DefaultTabController(
+        length: 3,
+        child: Scaffold(
+            appBar: AppBar(
+              title: Text("Navigation"),
             ),
-          ),
-          body: Center(
-            child: _widgetOptions.elementAt(_selectedIndex),
-          ),
-          bottomNavigationBar: BottomNavigationBar(
-            type: BottomNavigationBarType.fixed,
-            backgroundColor: Color(0xFF6200EE),
-            selectedItemColor: Colors.white,
-            unselectedItemColor: Colors.white.withOpacity(.60),
-            selectedFontSize: 14,
-            unselectedFontSize: 14,
-            items: [
-              BottomNavigationBarItem(
-                label: 'Home',
-                icon: Icon(Icons.home),
+            drawer: Drawer(
+              child: Container(
+                color: Colors.cyan,
               ),
-              BottomNavigationBarItem(
-                label: 'Music',
-                icon: Icon(Icons.music_note),
-              ),
-              BottomNavigationBarItem(
-                label: 'Places',
-                icon: Icon(Icons.location_on),
-              ),
-              BottomNavigationBarItem(
-                label: 'News',
-                icon: Icon(Icons.library_books),
-              ),
-            ],
-            currentIndex: _selectedIndex,
-            onTap: _onItemTapped,
-          )),
+            ),
+            body: Center(
+              child: _widgetOptions.elementAt(_selectedIndex),
+            ),
+            bottomNavigationBar: BottomNavigationBar(
+              type: BottomNavigationBarType.fixed,
+              backgroundColor: Colors.blueAccent,
+              selectedItemColor: Colors.white,
+              unselectedItemColor: Colors.white.withOpacity(.60),
+              selectedFontSize: 14,
+              unselectedFontSize: 14,
+              items: [
+                BottomNavigationBarItem(
+                  label: 'Home',
+                  icon: Icon(Icons.home),
+                ),
+                BottomNavigationBarItem(
+                  label: 'Music',
+                  icon: Icon(Icons.music_note),
+                ),
+                BottomNavigationBarItem(
+                  label: 'Places',
+                  icon: Icon(Icons.location_on),
+                ),
+                BottomNavigationBarItem(
+                  label: 'News',
+                  icon: Icon(Icons.library_books),
+                ),
+              ],
+              currentIndex: _selectedIndex,
+              onTap: _onItemTapped,
+            )),
+      ),
     );
   }
 }
