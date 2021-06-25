@@ -43,6 +43,7 @@ class _HomeScreenState extends State<HomeScreen> {
         child: Scaffold(
             appBar: AppBar(
               title: Text("Navigation"),
+              backgroundColor: Colors.blueGrey[900],
             ),
             drawer: Drawer(
               child: Container(
@@ -54,7 +55,7 @@ class _HomeScreenState extends State<HomeScreen> {
             ),
             bottomNavigationBar: BottomNavigationBar(
               type: BottomNavigationBarType.fixed,
-              backgroundColor: Colors.blueAccent,
+              backgroundColor: Colors.blueGrey[900],
               selectedItemColor: Colors.white,
               unselectedItemColor: Colors.white.withOpacity(.60),
               selectedFontSize: 14,
