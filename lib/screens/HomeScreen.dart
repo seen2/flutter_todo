@@ -1,10 +1,21 @@
 import 'package:flutter/material.dart';
+import 'package:todo/model/task.dart';
 import 'package:todo/screens/AddTaskScreen.dart';
 import 'package:todo/widgets/TaskList.dart';
 
-class HomeScreen extends StatelessWidget {
-  const HomeScreen({Key? key}) : super(key: key);
+class HomeScreen extends StatefulWidget {
+  HomeScreen({Key? key}) : super(key: key);
 
+  @override
+  _HomeScreenState createState() => _HomeScreenState();
+}
+
+class _HomeScreenState extends State<HomeScreen> {
+  final List<Task> tasks = [
+    Task(name: "Buy Milk"),
+    Task(name: "Buy Bread"),
+    Task(name: "Start Coding")
+  ];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -14,7 +25,15 @@ class HomeScreen extends StatelessWidget {
         child: Icon(Icons.add),
         onPressed: () {
           showModalBottomSheet(
-              context: context, builder: (context) => AddTaskScreen());
+              context: context,
+              builder: (context) => AddTaskScreen(
+                    tasks: tasks,
+                    onSave: () => {
+                      setState(() {
+                        Navigator.pop(context);
+                      })
+                    },
+                  ));
         },
       ),
       body: Column(
@@ -60,7 +79,10 @@ class HomeScreen extends StatelessWidget {
                   borderRadius: BorderRadius.only(
                       topLeft: Radius.circular(20),
                       topRight: Radius.circular(20))),
-              child: TaskList(),
+              child: TaskList(
+                tasks: tasks,
+                isChanged: () => {setState(() {})},
+              ),
             ),
           )
         ],

@@ -1,7 +1,18 @@
 import 'package:flutter/material.dart';
+import 'package:todo/model/task.dart';
 
-class AddTaskScreen extends StatelessWidget {
-  const AddTaskScreen({Key? key}) : super(key: key);
+class AddTaskScreen extends StatefulWidget {
+  final List<Task> tasks;
+  final Function onSave;
+
+  AddTaskScreen({required this.tasks, required this.onSave});
+
+  @override
+  _AddTaskScreenState createState() => _AddTaskScreenState();
+}
+
+class _AddTaskScreenState extends State<AddTaskScreen> {
+  String? taskName;
 
   @override
   Widget build(BuildContext context) {
@@ -20,11 +31,19 @@ class AddTaskScreen extends StatelessWidget {
               style: TextStyle(fontSize: 30, color: Colors.lightBlueAccent),
             ),
             TextField(
+              onChanged: (value) {
+                setState(() {
+                  taskName = value;
+                });
+              },
               autofocus: true,
               textAlign: TextAlign.center,
             ),
             TextButton(
-              onPressed: () {},
+              onPressed: () {
+                widget.tasks.add(Task(name: taskName!));
+                widget.onSave();
+              },
               child: Text(
                 "Save",
                 style: TextStyle(
