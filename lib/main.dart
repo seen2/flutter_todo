@@ -7,16 +7,23 @@ main(List<String> args) {
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
-  final String data = "My top Secret Data";
-
   @override
   Widget build(BuildContext context) {
-    return Provider<String>(
-      create: (context) => data,
+    return ChangeNotifierProvider<Data>(
+      create: (context) => Data(),
       child: MaterialApp(
         home: Material(child: HomeScreen()),
       ),
     );
+  }
+}
+
+class Data extends ChangeNotifier {
+  String data = "My Secret Data";
+
+//method to change daata
+  void changeData(String newdata) {
+    data = newdata;
+    notifyListeners(); //notify all widgets for change
   }
 }
