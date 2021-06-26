@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import 'package:todo/provider/data.dart';
 import 'package:todo/screens/AddTaskScreen.dart';
 import 'package:todo/widgets/TaskList.dart';
 
@@ -46,7 +48,7 @@ class HomeScreen extends StatelessWidget {
                   ),
                 ),
                 Text(
-                  "12 Tasks",
+                  Provider.of<Data>(context).tasksLength.toString(),
                   style: TextStyle(color: Colors.white, fontSize: 18),
                 ),
               ],
