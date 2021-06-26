@@ -65,7 +65,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   ),
                 ),
                 Text(
-                  "12 Tasks",
+                  tasks.length.toString(),
                   style: TextStyle(color: Colors.white, fontSize: 18),
                 ),
               ],
