@@ -82,9 +82,6 @@ class _DetailsScreeState extends State<DetailsScree> {
                     Expanded(
                       child: Text(
                         " A Switch",
-                        style: CupertinoTheme.of(context)
-                            .textTheme
-                            .actionTextStyle,
                       ),
                     ),
                     CupertinoSwitch(
