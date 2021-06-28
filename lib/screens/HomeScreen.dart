@@ -1,5 +1,4 @@
 import 'package:flutter/cupertino.dart';
-import 'package:flutter/services.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({Key? key}) : super(key: key);
@@ -106,7 +105,7 @@ class _DetailsScreeState extends State<DetailsScree> {
                                 Navigator.pop(context, 1);
                               },
                               isDefaultAction: true,
-                              child: Text("one"),
+                              child: Text("One"),
                             ),
                             CupertinoActionSheetAction(
                               onPressed: () {

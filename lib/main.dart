@@ -17,12 +17,7 @@ class MyApp extends StatelessWidget {
     ));
     return CupertinoApp(
       debugShowCheckedModeBanner: false,
-      theme: CupertinoThemeData(
-          textTheme: CupertinoTextThemeData(
-              navLargeTitleTextStyle: TextStyle(
-                  fontWeight: FontWeight.bold,
-                  fontSize: 70,
-                  color: CupertinoColors.activeBlue))),
+      theme: CupertinoThemeData(),
       home: HomeScreen(),
     );
   }
