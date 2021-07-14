@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:todo/routes/myAppRoutes.dart';
+import 'package:todo/screens/ContactDetailsScreen.dart';
 import 'package:todo/screens/HomeScreen.dart';
 
 main(List<String> args) {
@@ -11,7 +13,12 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      theme: ThemeData.dark(),
       home: Material(child: HomeScreen()),
+      routes: {
+        MyAppRoute.contactDetailScreen: (context) => ContactDetailsScreen(),
+      },
     );
   }
 }
