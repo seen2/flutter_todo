@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:todo/routes/myAppRoutes.dart';
 import 'package:todo/screens/ContactDetailsScreen.dart';
 
 class ContactCard extends StatelessWidget {
