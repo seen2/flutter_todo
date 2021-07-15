@@ -17,37 +17,39 @@ class ContactDetailsScreen extends StatelessWidget {
           style: TextStyle(fontSize: 25, fontWeight: FontWeight.w700),
         ),
       ),
-      body: Card(
-          child: Column(
-        children: [
-          Expanded(
-              child: Image.network(
-            img,
-            fit: BoxFit.contain,
-          )),
-          Padding(
-            padding: const EdgeInsets.all(16.0),
+      body: Center(
+        child: Card(
             child: Column(
-              children: [
-                Text(
-                  "Email: " + email,
-                  style: TextStyle(fontSize: 12, fontWeight: FontWeight.w700),
-                ),
-                Text(
-                  "Phone: " + phone,
-                  style: TextStyle(fontSize: 18, fontWeight: FontWeight.w700),
-                ),
-                Text(
-                  "Location: " + address,
-                  style: TextStyle(
-                    fontSize: 16,
+          children: [
+            Expanded(
+                child: Image.network(
+              img,
+              fit: BoxFit.contain,
+            )),
+            Padding(
+              padding: const EdgeInsets.all(16.0),
+              child: Column(
+                children: [
+                  Text(
+                    "Email: " + email,
+                    style: TextStyle(fontSize: 12, fontWeight: FontWeight.w700),
                   ),
-                ),
-              ],
-            ),
-          )
-        ],
-      )),
+                  Text(
+                    "Phone: " + phone,
+                    style: TextStyle(fontSize: 18, fontWeight: FontWeight.w700),
+                  ),
+                  Text(
+                    "Location: " + address,
+                    style: TextStyle(
+                      fontSize: 16,
+                    ),
+                  ),
+                ],
+              ),
+            )
+          ],
+        )),
+      ),
     );
   }
 }

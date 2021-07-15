@@ -11,11 +11,13 @@ class ContactCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    int fit =
+        MediaQuery.of(context).size.width ~/ MediaQuery.of(context).size.height;
+
     return GridView.builder(
       gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-        childAspectRatio: 8.0 / 10.0,
-        crossAxisCount: 2,
-      ),
+          childAspectRatio: 8.0 / 10.0,
+          crossAxisCount: 2 + (fit >= 1 ? fit + 1 : fit)),
       itemBuilder: (context, index) {
         var nameObj = users![index]["name"];
         var addObj = users![index]["location"];
